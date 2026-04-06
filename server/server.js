@@ -8,7 +8,6 @@ import { createClient } from '@supabase/supabase-js';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// Load env variables safely from backend directory
 dotenv.config({ path: path.join(__dirname, '.env') });
 
 const app = express();
@@ -17,7 +16,6 @@ app.use(express.json());
 
 const PORT = process.env.PORT || 5000;
 
-// Initialize Supabase Client
 const supabaseUrl = process.env.VITE_SUPABASE_URL || process.env.SUPABASE_URL;
 const supabaseAnonKey = process.env.VITE_SUPABASE_ANON_KEY || process.env.SUPABASE_ANON_KEY;
 
@@ -28,7 +26,6 @@ if (!supabaseUrl || !supabaseAnonKey) {
 const supabase = createClient(supabaseUrl || 'https://placeholder.supabase.co', supabaseAnonKey || 'placeholder');
 const apiKey = process.env.VITE_GROQ_API_KEY || process.env.GROQ_API_KEY;
 
-// POST /api/ideas -> accepts idea + triggers AI analysis
 app.post('/api/ideas', async (req, res) => {
     try {
         const { email, title, description } = req.body;
@@ -37,7 +34,6 @@ app.post('/api/ideas', async (req, res) => {
             return res.status(400).json({ error: 'Missing required fields: email, title, description' });
         }
 
-        // 1. Groq Validation
         const prompt = `
             Analyze the following startup idea and provide a structured validation report in JSON format.
             
@@ -78,7 +74,6 @@ app.post('/api/ideas', async (req, res) => {
         const groqResult = await groqResponse.json();
         const report = JSON.parse(groqResult.choices[0].message.content);
 
-        // 2. Save to Supabase 'Idea' table
         const { data, error: insertError } = await supabase
             .from('Idea')
             .insert([{ email, title, description, result: report }])
@@ -89,7 +84,6 @@ app.post('/api/ideas', async (req, res) => {
             throw new Error(`Database error: ${insertError.message}`);
         }
 
-        // Return successfully generated report and saved record data
         res.status(201).json({ report, record: data[0] });
 
     } catch (error) {
@@ -98,7 +92,6 @@ app.post('/api/ideas', async (req, res) => {
     }
 });
 
-// GET /api/ideas -> returns list of saved ideas for a specific user
 app.get('/api/ideas', async (req, res) => {
     try {
         const { email } = req.query;
@@ -110,8 +103,7 @@ app.get('/api/ideas', async (req, res) => {
             .eq('email', email);
 
         if (error) throw error;
-        
-        // Return reversed array (newest first)
+
         res.json([...data].reverse());
     } catch (error) {
         console.error('GET /api/ideas error:', error);
@@ -119,7 +111,6 @@ app.get('/api/ideas', async (req, res) => {
     }
 });
 
-// GET /api/ideas/:id -> returns full analysis report for a single historical search
 app.get('/api/ideas/:id', async (req, res) => {
     try {
         const { id } = req.params;
@@ -140,7 +131,6 @@ app.get('/api/ideas/:id', async (req, res) => {
     }
 });
 
-// DELETE /api/ideas/:id -> optional route to delete an idea history
 app.delete('/api/ideas/:id', async (req, res) => {
     try {
         const { id } = req.params;
@@ -158,6 +148,6 @@ app.delete('/api/ideas/:id', async (req, res) => {
 });
 
 app.listen(PORT, () => {
-    console.log(`✅ Backend Server running securely on port ${PORT}`);
-    console.log(`✅ Ready to accept API requests from frontend.`);
+    console.log(`Backend Server running securely on port ${PORT}`);
+    console.log(`Ready to accept API requests from frontend.`);
 });

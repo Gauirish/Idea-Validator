@@ -18,7 +18,7 @@ function AuthPage() {
 
         try {
             if (isLogin) {
-                // Login Logic: Check email and password in 'Authentication' table
+                
                 const { data, error } = await supabase
                     .from('Authentication')
                     .select('*')
@@ -34,7 +34,7 @@ function AuthPage() {
                     setTimeout(() => navigate('/home'), 1000);
                 }
             } else {
-                // Sign Up Logic: Check if email exists first
+                
                 const { data: existingUser, error: checkError } = await supabase
                     .from('Authentication')
                     .select('email')
@@ -44,7 +44,7 @@ function AuthPage() {
                 if (existingUser) {
                     setMessage({ type: 'error', text: 'Email taken' });
                 } else {
-                    // Insert new user
+                    
                     const { error: insertError } = await supabase
                         .from('Authentication')
                         .insert([

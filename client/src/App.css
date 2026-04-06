@@ -19,7 +19,6 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-/* Layout Utilities */
 .page-wrapper {
     width: 100%;
     min-height: 100vh;
@@ -45,7 +44,6 @@ body {
     box-sizing: border-box;
 }
 
-/* Base Components */
 .glass-card {
     background: var(--card-bg);
     border-radius: 2rem;
@@ -89,7 +87,6 @@ body {
     box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.2);
 }
 
-/* Landing Page */
 .hero-card {
     max-width: 850px;
     padding: 4rem 2rem;
@@ -113,7 +110,6 @@ body {
     line-height: 1.7;
 }
 
-/* Form Page */
 .form-card {
     max-width: 550px;
     padding: clamp(2rem, 6vw, 3.5rem);
@@ -176,7 +172,6 @@ body {
     margin-top: 1.5rem;
 }
 
-/* Connect Section */
 .connect-section {
     width: 100%;
     background: white;
@@ -228,7 +223,6 @@ body {
     height: 28px;
 }
 
-/* Auth Component Styles */
 .auth-toggle-container {
     display: flex;
     background: #f1f5f9;
@@ -292,7 +286,6 @@ body {
     border: 1px solid #dbeafe;
 }
 
-/* AI Validation Report Styles */
 .validation-report {
     max-width: 900px;
     margin-top: 3rem;
@@ -417,7 +410,6 @@ body {
     }
 }
 
-/* Animations */
 @keyframes slideUp {
     from {
         opacity: 0;
@@ -430,7 +422,6 @@ body {
     }
 }
 
-/* Mobile */
 @media (max-width: 640px) {
     .btn {
         width: 100%;
@@ -445,7 +436,6 @@ body {
     }
 }
 
-/* ChatGPT Layout and FormPage Styles */
 .chatgpt-layout {
     display: flex;
     height: 100vh;
@@ -549,7 +539,7 @@ body {
     gap: 0.35rem;
     overflow-y: auto;
     flex: 1;
-    /* Custom scrollbar for sidebar */
+    
     scrollbar-width: thin;
     scrollbar-color: #475569 transparent;
 }
@@ -581,7 +571,6 @@ body {
     font-weight: 500;
 }
 
-/* Main Interface Specific Additions */
 .historical-view-card {
     background: white;
     border: 1px solid #e2e8f0;

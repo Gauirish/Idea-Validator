@@ -35,7 +35,6 @@ function FormPage() {
 
             setUserProfile(prev => ({ ...prev, email }));
 
-            // Fetch Name
             const { data: userData } = await supabase
                 .from('Authentication')
                 .select('name')
@@ -94,7 +93,7 @@ function FormPage() {
         setFormData({ title: '', description: '' });
         setResult(null);
         setError('');
-        fetchHistory(); // Sync history on new search click
+        fetchHistory(); 
     };
 
     const getInitial = (name) => {
@@ -102,10 +101,8 @@ function FormPage() {
         return name.charAt(0).toUpperCase();
     };
 
-    // Determine what to display (either the active selected historical idea, or the current form session)
     const displayMode = selectedSearch ? 'history' : 'new';
-    
-    // Parse result from history safely (since we stringified it on insert)
+
     let historicalResult = null;
     if (displayMode === 'history' && selectedSearch.result) {
         try {
@@ -123,7 +120,6 @@ function FormPage() {
     return (
         <div className="chatgpt-layout">
 
-            {/* SIDEBAR */}
             <div className="sidebar">
                 <div className="sidebar-header">
                     <div className="avatar">
@@ -159,12 +155,11 @@ function FormPage() {
                 </div>
             </div>
 
-            {/* MAIN CONTENT */}
             <div className="main-content">
                 <div className="app-container" style={{maxWidth: '900px', margin: '0 auto', width: '100%'}}>
                     
                     {displayMode === 'new' ? (
-                        /* NEW SEARCH FORM */
+                        
                         <div className="glass-card form-card">
                             <h2 className="form-title">Validate Your Startup Idea</h2>
                             <form onSubmit={handleSubmit} className="modern-form">
@@ -200,7 +195,7 @@ function FormPage() {
                             {error && <div className="auth-message error" style={{ marginTop: '2rem' }}>{error}</div>}
                         </div>
                     ) : (
-                        /* HISTORICAL SEARCH VIEW */
+                        
                         <div className="historical-view-card">
                             <h2 className="form-title" style={{marginBottom:'0.5rem'}}>{selectedSearch.title}</h2>
                             
@@ -211,7 +206,6 @@ function FormPage() {
                         </div>
                     )}
 
-                    {/* AI Validation Report Result (Used by both New & Historical) */}
                     {currentReport && (
                         <div className="glass-card validation-report" style={{marginTop: '2rem'}}>
                             <div className="report-header" style={{ justifyContent: 'center', flexDirection: 'column', textAlign: 'center', gap: '1rem' }}>
@@ -228,25 +222,25 @@ function FormPage() {
 
                             <div className="report-grid">
                                 <div className="report-section">
-                                    <h3><span className="icon">🚀</span> Problem Summary</h3>
+                                    <h3>Problem Summary</h3>
                                     <p>{currentReport.problemSummary}</p>
                                 </div>
                                 <div className="report-section">
-                                    <h3><span className="icon">👥</span> Customer Persona</h3>
+                                    <h3>Customer Persona</h3>
                                     <p>{currentReport.customerPersona}</p>
                                 </div>
                                 <div className="report-section">
-                                    <h3><span className="icon">📊</span> Market Overview</h3>
+                                    <h3>Market Overview</h3>
                                     <p>{currentReport.marketOverview}</p>
                                 </div>
                                 <div className="report-section">
-                                    <h3><span className="icon">⚔️</span> Competitor List</h3>
+                                    <h3>Competitor List</h3>
                                     <ul>
                                         {Array.isArray(currentReport.competitorList) && currentReport.competitorList.map((item, i) => <li key={i}>{item}</li>)}
                                     </ul>
                                 </div>
                                 <div className="report-section full-width">
-                                    <h3><span className="icon">💻</span> Suggested Tech Stack</h3>
+                                    <h3>Suggested Tech Stack</h3>
                                     <div className="tech-pills">
                                         {Array.isArray(currentReport.techStack) && currentReport.techStack.map((tech, i) => <span key={i} className="tech-pill">{tech}</span>)}
                                     </div>
