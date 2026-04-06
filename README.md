@@ -1,33 +1,15 @@
-<<<<<<< HEAD
+<<<<<<<<HEAD
 #  AI-Powered Startup Idea Validator
-
-A modern, full-stack Monorepo web application that dynamically evaluates startup concepts. Users can submit a startup idea, and the platform utilizes **Groq's Llama-3 LLM** to perform lightning-fast market research, generating a deeply structured JSON report that assesses Risk Level, Competitor Analysis, Customer Personas, and Profitability.
-
-## ️ Tech Stack & Architecture
-This project implements a clean **Monorepo Architecture** to ensure maximum API key security and scalability.
-
-* **Client (`/client`)**: React.js, Vite, React Router DOM, Pure CSS UI.
-* **Server (`/server`)**: Node.js, Express.js REST API.
-* **Database & Auth**: Supabase (PostgreSQL).
-* **AI Engine**: Groq API (Llama-3.3-70b-versatile).
-
----
-
-##  Local Installation Guide
-=======
-# AI-Powered Startup Idea Validator
 
 A modern, full-stack Monorepo web application that dynamically evaluates startup concepts. Users can submit a startup idea, and the platform utilizes Groq's Llama-3 LLM to perform lightning-fast market research, generating a deeply structured JSON report that assesses Risk Level, Competitor Analysis, Customer Personas, and Profitability.
 
-## Tech Stack & Architecture
-This project implements a clean **Monorepo Architecture** to ensure maximum API key security and scalability.
+## ️ Tech Stack & Architecture
+This project implements a clean Monorepo Architecture to ensure maximum API key security and scalability.
 
 * Client (/client): React.js, Vite, React Router DOM, Pure CSS UI.
 * Server (/server): Node.js, Express.js REST API.
 * Database & Auth: Supabase (PostgreSQL).
 * AI Engine: Groq API (Llama-3.3-70b-versatile).
-
----
 
 ## Local Installation Guide
 >>>>>>> a98bb8747d7c10266b1db215acab16343507051d
