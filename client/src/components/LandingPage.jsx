@@ -7,7 +7,7 @@ function LandingPage() {
         <div className="page-wrapper">
             <div className="app-container">
                 <div className="glass-card hero-card">
-                    <h1 className="hero-title">Turn Your Startup Idea into a Validated Opportunity</h1>
+                    <h1 className="hero-title">Welcome to Ideaforge</h1>
                     <p className="hero-description">
                         Got a startup idea but not sure if it will work?
 Our AI-powered Startup Idea Validator helps you analyze, refine, and validate your ideas instantly.
