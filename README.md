@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #  AI-Powered Startup Idea Validator
 
 A modern, full-stack Monorepo web application that dynamically evaluates startup concepts. Users can submit a startup idea, and the platform utilizes **Groq's Llama-3 LLM** to perform lightning-fast market research, generating a deeply structured JSON report that assesses Risk Level, Competitor Analysis, Customer Personas, and Profitability.
@@ -13,11 +14,29 @@ This project implements a clean **Monorepo Architecture** to ensure maximum API 
 ---
 
 ##  Local Installation Guide
+=======
+# AI-Powered Startup Idea Validator
+
+A modern, full-stack Monorepo web application that dynamically evaluates startup concepts. Users can submit a startup idea, and the platform utilizes Groq's Llama-3 LLM to perform lightning-fast market research, generating a deeply structured JSON report that assesses Risk Level, Competitor Analysis, Customer Personas, and Profitability.
+
+## Tech Stack & Architecture
+This project implements a clean **Monorepo Architecture** to ensure maximum API key security and scalability.
+
+* Client (/client): React.js, Vite, React Router DOM, Pure CSS UI.
+* Server (/server): Node.js, Express.js REST API.
+* Database & Auth: Supabase (PostgreSQL).
+* AI Engine: Groq API (Llama-3.3-70b-versatile).
+
+---
+
+## Local Installation Guide
+>>>>>>> a98bb8747d7c10266b1db215acab16343507051d
 
 ### Prerequisites
 Make sure you have [Node.js](https://nodejs.org/) installed on your machine.
 
 ### 1. Clone the repository
+<<<<<<< HEAD
 ```bash
 git clone https://github.com/Gauirish/Idea-Validator.git
 cd Idea-Validator
@@ -29,6 +48,16 @@ cd server
 npm install
 ```
 Create a `.env` file inside the `/server` folder and add these API Keys:
+=======
+git clone https://github.com/Gauirish/Idea-Validator.git
+cd Idea-Validator
+
+
+### 2. Setup the Express Backend
+cd server
+npm install
+Create a .env file inside the /server folder and add these API Keys:
+>>>>>>> a98bb8747d7c10266b1db215acab16343507051d
 ```env
 SUPABASE_URL=your_supabase_url
 SUPABASE_ANON_KEY=your_supabase_anon_key
@@ -59,7 +88,11 @@ npm run dev
 
 ---
 
+<<<<<<< HEAD
 ##  AI Development Methodology (Prompt Engineering Log)
+=======
+## 🤖 AI Development Methodology (Prompt Engineering Log)
+>>>>>>> a98bb8747d7c10266b1db215acab16343507051d
 
 This application was engineered using an **Agentic AI Pair-Programming workflow**. Below is the chronological blueprint of the prompts and directives we issued to the AI to construct this platform from scratch. This serves as verification of the AI-collaborative SDLC (Software Development Life Cycle):
 
@@ -87,4 +120,8 @@ This application was engineered using an **Agentic AI Pair-Programming workflow*
 
 > *"Separate the embedded styling from FormPage directly into a scalable `App.css` global stylesheet."*
 
+<<<<<<< HEAD
 > *"Add visual polish. Ensure the Risk and Profit assessment UI renders in centered alignment, and dynamically pull in a lightbulb patterned image to use as the background across the landing and authentication wrappers."*
+=======
+> *"Add visual polish. Ensure the Risk and Profit assessment UI renders in centered alignment, and dynamically pull in a lightbulb patterned image to use as the background across the landing and authentication wrappers."*
+>>>>>>> a98bb8747d7c10266b1db215acab16343507051d
