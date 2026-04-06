@@ -7,10 +7,12 @@ function LandingPage() {
         <div className="page-wrapper">
             <div className="app-container">
                 <div className="glass-card hero-card">
-                    <h1 className="hero-title">Welcome to Our Platform</h1>
+                    <h1 className="hero-title">Turn Your Startup Idea into a Validated Opportunity</h1>
                     <p className="hero-description">
-                        Experience the future of digital interaction with our cutting-edge solutions.
-                        Start your journey today and unlock endless possibilities.
+                        Got a startup idea but not sure if it will work?
+Our AI-powered Startup Idea Validator helps you analyze, refine, and validate your ideas instantly.
+
+Using advanced AI, the platform evaluates your concept across key factors like market demand, feasibility, competition, and scalability—giving you a clear, structured validation report in seconds.
                     </p>
                     <button className="btn" onClick={() => navigate('/form')}>
                         Get started

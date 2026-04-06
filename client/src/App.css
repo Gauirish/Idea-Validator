@@ -26,6 +26,11 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-image: url('./assets/bg-pattern.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 .app-container {
